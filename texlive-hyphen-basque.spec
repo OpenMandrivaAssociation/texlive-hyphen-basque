@@ -1,3 +1,9 @@
+# revision 23085
+# category TLCore
+# catalog-ctan /language/basque
+# catalog-date 2009-09-24 15:05:48 +0200
+# catalog-license other-free
+# catalog-version undef
 Name:		texlive-hyphen-basque
 Version:	20090924
 Release:	1
@@ -46,6 +52,7 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 %_texmf_language_dat_d/hyphen-basque
 %_texmf_language_def_d/hyphen-basque
 %_texmf_language_lua_d/hyphen-basque
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,6 +61,8 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-basque <<EOF
 %% from hyphen-basque:
