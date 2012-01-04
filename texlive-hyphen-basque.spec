@@ -44,12 +44,12 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-basque <<EOF
-%% from hyphen-basque:
+\%\% from hyphen-basque:
 basque loadhyph-eu.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-basque <<EOF
-%% from hyphen-basque:
+\%\% from hyphen-basque:
 \addlanguage{basque}{loadhyph-eu.tex}{}{2}{2}
 EOF
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
