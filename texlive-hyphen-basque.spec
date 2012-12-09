@@ -66,3 +66,22 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-basque <<EOF
 		hyphenation = '',
 	},
 EOF
+
+
+%changelog
+* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20090924-3
++ Revision: 767513
+- Add workaround to rpm bug that broke hyphenation files
+- Add workaround to rpm bug that broke hyphenation files
+
+* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20090924-2
++ Revision: 759895
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20090924-1
++ Revision: 718639
+- texlive-hyphen-basque
+- texlive-hyphen-basque
+- texlive-hyphen-basque
+- texlive-hyphen-basque
+
