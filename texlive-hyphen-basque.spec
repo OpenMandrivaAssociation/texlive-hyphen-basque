@@ -5,8 +5,8 @@
 # catalog-license other-free
 # catalog-version undef
 Name:		texlive-hyphen-basque
-Version:	20090924
-Release:	11
+Version:	20170414
+Release:	1
 Summary:	Basque hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/basque
