@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-basque
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Basque hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/basque
@@ -28,6 +28,8 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 %_texmf_language_dat_d/hyphen-basque
 %_texmf_language_def_d/hyphen-basque
 %_texmf_language_lua_d/hyphen-basque
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 
 #-----------------------------------------------------------------------
 %prep
@@ -36,6 +38,9 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-basque <<EOF
 \%% from hyphen-basque:
