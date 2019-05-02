@@ -1,5 +1,5 @@
 Name:		texlive-hyphen-basque
-Version:	20181105
+Version:	20190406
 Release:	1
 Summary:	Basque hyphenation patterns
 Group:		Publishing
