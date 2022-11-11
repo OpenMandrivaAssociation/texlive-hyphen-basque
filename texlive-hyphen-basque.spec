@@ -1,11 +1,11 @@
 Name:		texlive-hyphen-basque
-Version:	20190406
+Version:	58652
 Release:	1
 Summary:	Basque hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/basque
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -16,12 +16,12 @@ Requires:	texlive-hyph-utf8
 Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -33,7 +33,7 @@ Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
