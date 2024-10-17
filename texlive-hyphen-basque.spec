@@ -3,7 +3,7 @@ Version:	58652
 Release:	2
 Summary:	Basque hyphenation patterns
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/basque
+URL:		https://www.ctan.org/tex-archive/language/basque
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.r%{version}.tar.xz
 BuildArch:	noarch
