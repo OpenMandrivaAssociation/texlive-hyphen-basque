@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-basque
 Version:	73410
-Release:	1
+Release:	2
 Summary:	Basque hyphenation patterns
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/basque
