@@ -1,67 +1,21 @@
-Name:		texlive-hyphen-basque
-Version:	73410
-Release:	2
-Summary:	Basque hyphenation patterns
+%global tl_name hyphen-basque
+%global tl_revision 78069
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Basque hyphenation patterns.
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/basque
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.r%{version}.tar.xz
+License:	other-free
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-basque.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-hyphen-base
-Requires:	texlive-hyph-utf8
+BuildSystem:	texlive
+Requires:	texlive(hyph-utf8)
+Requires:	texlive(hyphen-base)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 Hyphenation patterns for Basque in T1/EC and UTF-8 encodings.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%_texmf_language_dat_d/hyphen-basque
-%_texmf_language_def_d/hyphen-basque
-%_texmf_language_lua_d/hyphen-basque
-%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
-%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex %{buildroot}%{_texmfdistdir}
-
-mkdir -p %{buildroot}%{_texmf_language_dat_d}
-cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-basque <<EOF
-\%% from hyphen-basque:
-basque loadhyph-eu.tex
-EOF
-perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-basque
-mkdir -p %{buildroot}%{_texmf_language_def_d}
-cat > %{buildroot}%{_texmf_language_def_d}/hyphen-basque <<EOF
-\%% from hyphen-basque:
-\addlanguage{basque}{loadhyph-eu.tex}{}{2}{2}
-EOF
-perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-basque
-mkdir -p %{buildroot}%{_texmf_language_lua_d}
-cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-basque <<EOF
--- from hyphen-basque:
-	['basque'] = {
-		loader = 'loadhyph-eu.tex',
-		lefthyphenmin = 2,
-		righthyphenmin = 2,
-		synonyms = {  },
-		patterns = 'hyph-eu.pat.txt',
-		hyphenation = '',
-	},
-EOF
